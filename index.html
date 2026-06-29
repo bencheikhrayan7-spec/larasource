@@ -147,13 +147,21 @@
       66% { transform: translate(-15px,20px) scale(0.97); }
     }
     .hero-content { position: relative; z-index: 2; padding-bottom: 0; }
-    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .hero-eyebrow { color: var(--primary); background: rgba(29,78,216,0.08); border: 1px solid rgba(29,78,216,0.15); }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .hero-eyebrow { color: var(--primary); background: rgba(29,78,216,0.08); border: 1px solid rgba(29,78,216,0.18); }
     .hero-eyebrow::before { background: var(--accent); }
-    .hero-text h1 { font-size: clamp(36px,5.5vw,66px); color: var(--text); margin-bottom: 24px; }
-    .hero-text h1 .brand-blue { color: var(--primary); }
+    .hero-text h1 {
+      font-size: clamp(38px,5.5vw,68px); color: var(--text); margin-bottom: 24px;
+      border-left: 4px solid var(--accent); padding-left: 20px;
+      margin-left: -24px;
+    }
+    .hero-text h1 em { font-style: normal; color: var(--primary); }
     .word { display: inline-block; opacity: 0; transform: translateY(20px); }
-    .hero-text p { font-size: 18px; color: var(--muted); line-height: 1.75; margin-bottom: 40px; max-width: 500px; }
+    .hero-text p { font-size: 18px; color: var(--muted); line-height: 1.8; margin-bottom: 40px; max-width: 480px; }
+    .hero-trust { display: flex; align-items: center; gap: 10px; margin-top: 24px; font-size: 13px; color: var(--muted); }
+    .hero-trust-dots { display: flex; gap: -4px; }
+    .hero-trust-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid white; background: var(--hero-grad); margin-left: -6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; }
+    .hero-trust-dot:first-child { margin-left: 0; }
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 
     /* hero primary btn on white bg needs override */
@@ -184,7 +192,7 @@
       box-shadow: 0 20px 60px rgba(29,78,216,0.18), 0 4px 16px rgba(29,78,216,0.08);
       position: relative; border: 1px solid rgba(29,78,216,0.10);
     }
-    .hero-img-wrap img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .hero-img-wrap img { width: 100%; height: 460px; object-fit: cover; object-position: center 40%; display: block; }
     /* Blue tint overlay on image for brand cohesion */
     .hero-img-wrap::after {
       content: ''; position: absolute; inset: 0;
@@ -493,7 +501,7 @@
     <div class="hero-inner">
       <div class="hero-text">
         <div class="eyebrow hero-eyebrow">End-to-end China sourcing</div>
-        <h1 id="heroHeadline">Source from China. Quotes in 5 hours.</h1>
+        <h1 id="heroHeadline">Source from China. <em>Quotes in 5 hours.</em></h1>
         <p>LaraSource connects your brand directly with vetted factories, runs on-site quality control, and ships to your warehouse — so you skip months of research and costly mistakes.</p>
         <div class="hero-buttons">
           <a href="#contact" class="hero-btn-primary">Get Started
@@ -501,10 +509,19 @@
           </a>
           <a href="#contact" class="hero-btn-secondary">Talk to Sales</a>
         </div>
+        <div class="hero-trust" aria-label="Trusted by brands">
+          <div class="hero-trust-dots" aria-hidden="true">
+            <div class="hero-trust-dot">A</div>
+            <div class="hero-trust-dot">B</div>
+            <div class="hero-trust-dot">C</div>
+            <div class="hero-trust-dot">+</div>
+          </div>
+          Trusted by 50+ e-commerce brands
+        </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="hero-img-wrap">
-          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1000&q=85" alt="Large cargo shipping port with containers" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1000&q=85&crop=edges" alt="Aerial view of cargo shipping port with containers" loading="lazy" />
           <div class="float-card float-card-1">
             <div class="dot" style="background:#22C55E;"></div>Quote ready in 5h
           </div>
